@@ -1,20 +1,18 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [todoInput, setTodoInput] = useState("");
 
-  function handleClick() {
-    setCount(count + 1);
+  function handleChange(event) {
+    setTodoInput(event.target.value);
   };
 
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={handleClick}>
-        Click me!
-      </button>
+      <input type="text" value={todoInput} onChange={handleChange} />
+      <p>{todoInput}</p>
     </div>
   );
 };
 
-export default App
+export default App;
